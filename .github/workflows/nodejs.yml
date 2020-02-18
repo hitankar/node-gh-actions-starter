@@ -13,18 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/download-artifact@v1
-      with:
-        name: app-artifact
-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm test
-
-    - run: cat app-artifact
-
+    
       env:
         CI: true
