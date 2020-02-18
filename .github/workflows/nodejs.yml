@@ -33,4 +33,4 @@ jobs:
         IMAGE_TAG: ${{ github.sha }}
       run: |
         npm install
-        npm run build
+        npm build
