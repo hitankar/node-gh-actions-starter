@@ -32,4 +32,5 @@ jobs:
       env:
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        docker build -t "$GITHUB_REPOSITORY:$IMAGE_TAG" .
+        npm install
+        npm run build
