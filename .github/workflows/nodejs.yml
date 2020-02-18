@@ -22,6 +22,7 @@ jobs:
 
   build:
     needs: test
+    runs-on: ubuntu-latest
 
     container:
       image: node:10
