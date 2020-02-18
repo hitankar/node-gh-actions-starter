@@ -23,9 +23,9 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build Docker image
-        env:
-          IMAGE_TAG: ${{ github.sha }}
-      - run: |
-          docker build -t "$GITHUB_REPOSITORY:$IMAGE_TAG" .
+    - uses: actions/checkout@v2
+    - name: Build Docker image
+      env:
+        IMAGE_TAG: ${{ github.sha }}
+    - run: |
+        docker build -t "$GITHUB_REPOSITORY:$IMAGE_TAG" .
