@@ -14,8 +14,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm test
+    - run: |
+        npm install 
+        npm test
     env:
       CI: true
 
@@ -27,4 +28,5 @@ jobs:
     - name: Build Docker image
       env:
         IMAGE_TAG: ${{ github.sha }}
-    - run: docker build -t "$GITHUB_REPOSITORY:$IMAGE_TAG" .
+    - run: |
+        docker build -t "$GITHUB_REPOSITORY:$IMAGE_TAG" .
