@@ -28,5 +28,5 @@ jobs:
     - name: Build Docker image
       env:
         IMAGE_TAG: ${{ github.sha }}
-    - run: |
+      run: |
         docker build -t "$GITHUB_REPOSITORY:$IMAGE_TAG" .
