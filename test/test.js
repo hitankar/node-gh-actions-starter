@@ -41,7 +41,7 @@ describe("Application", () => {
                     res.should.have.status(200);
                     res.body.date.should.equal(todaysDate);
                     done();
-                 });
+                });
         });
     });
 });
